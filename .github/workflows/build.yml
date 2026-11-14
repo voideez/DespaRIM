@@ -57,7 +57,6 @@ jobs:
         with:
           name: ${{ steps.notes.outputs.title }}
           body_path: release-body.md
-          prerelease: ${{ contains(github.ref_name, 'beta') }}
           files: DespaRIM-*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
