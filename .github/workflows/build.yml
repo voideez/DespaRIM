@@ -38,10 +38,26 @@ jobs:
           cp -r About 1.6 Defs Languages LICENSE.txt dist/DespaRIM/
           cd dist && zip -r "../DespaRIM-${GITHUB_REF_NAME}.zip" DespaRIM
 
+      - name: Release notes
+        id: notes
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          f=".github/releases/${GITHUB_REF_NAME}.md"
+          if [ -f "$f" ]; then
+            echo "title=$(head -n1 "$f" | sed 's/^# *//')" >> "$GITHUB_OUTPUT"
+            tail -n +2 "$f" > release-body.md
+          else
+            echo "title=DespaRIM ${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+            : > release-body.md
+          fi
+
       - name: Upload to Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
+          name: ${{ steps.notes.outputs.title }}
+          body_path: release-body.md
+          prerelease: ${{ contains(github.ref_name, 'beta') }}
           files: DespaRIM-*.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
