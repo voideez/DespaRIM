@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- ================================================================== -->
+  <!--  MOD SETTINGS                                                       -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_SettingsCategory>DespaRIM</DespaRIM_SettingsCategory>
+  <DespaRIM_Settings_Title>DespaRIM: отчаяние</DespaRIM_Settings_Title>
+  <DespaRIM_Settings_Subtitle>Тишина за закрытой дверью тоже бывает криком.</DespaRIM_Settings_Subtitle>
+
+  <DespaRIM_Settings_MoodThreshold>Порог настроения для накопления стресса: {0}</DespaRIM_Settings_MoodThreshold>
+  <DespaRIM_Settings_MoodThreshold_Tip>Пока настроение колониста держится НИЖЕ этого значения, внутри копится отчаяние. Стоит настроению подняться выше, и счётчик сбрасывается до нуля.\n\nДиапазон: 5–40%. По умолчанию: 20%.</DespaRIM_Settings_MoodThreshold_Tip>
+
+  <DespaRIM_Settings_DaysRequired>Дней до появления шанса срыва: {0}</DespaRIM_Settings_DaysRequired>
+  <DespaRIM_Settings_DaysRequired_Tip>Сколько игровых дней подряд настроение должно оставаться ниже порога, прежде чем срыв «Отчаяние» вообще станет возможен. До этого срока шанс равен нулю.\n\nДиапазон: 1–30 дней. По умолчанию: 10.</DespaRIM_Settings_DaysRequired_Tip>
+
+  <DespaRIM_Settings_Mtb>Базовый шанс (MTB, в днях): {0}</DespaRIM_Settings_Mtb>
+  <DespaRIM_Settings_Mtb_Tip>Mean Time Between: в среднем раз во столько дней срыв сработает у колониста, который уже прошёл порог. Чем больше число, тем реже срыв.\n\nДиапазон: 10–150 дней. По умолчанию: 60.</DespaRIM_Settings_Mtb_Tip>
+  <DespaRIM_Settings_Mtb_Daily>    ≈ {0} шанс срыва за каждые сутки после прохождения порога</DespaRIM_Settings_Mtb_Daily>
+
+  <DespaRIM_Settings_RescueHours>Время на спасение: {0} ч. ({1} тиков)</DespaRIM_Settings_RescueHours>
+  <DespaRIM_Settings_RescueHours_Tip>Сколько игровых часов проходит с момента, как колонист заперся, до самоубийства. Выбейте дверь, оглушите, свалите с ног или арестуйте его, пока время не вышло.\n\nДиапазон: 0,5–6 ч. По умолчанию: 2 ч (5000 тиков).</DespaRIM_Settings_RescueHours_Tip>
+
+  <DespaRIM_Settings_AllowPrisoners>Разрешить срыв для заключённых</DespaRIM_Settings_AllowPrisoners>
+  <DespaRIM_Settings_AllowPrisoners_Tip>Если включено, заключённый, доведённый до отчаяния, может сломаться так же, как колонист. Он не ищет другую комнату и запирается прямо в своей камере.\n\nПо умолчанию: включено.</DespaRIM_Settings_AllowPrisoners_Tip>
+
+  <DespaRIM_Settings_Summary>Итог: если настроение ниже {0} держится {1} дн. подряд, начинается риск срыва (MTB {2} дн.). На спасение даётся {3} ч.</DespaRIM_Settings_Summary>
+  <DespaRIM_Settings_Reset>Сбросить по умолчанию</DespaRIM_Settings_Reset>
+
+  <!-- ================================================================== -->
+  <!--  LETTER AND BREAK REASON                                            -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_LetterLabel>Отчаяние: {0}</DespaRIM_LetterLabel>
+
+  <DespaRIM_LetterText>{PAWN_nameDef} {PAWN_gender ? больше не плакал : больше не плакала}. Не жаловался никому и ни на что. Просто однажды {PAWN_gender ? встал : встала} из-за стола, не доев, и молча {PAWN_gender ? ушёл : ушла}.\n\nЩелчок засова был едва слышен.\n\nЭто не истерика и не попытка привлечь внимание. Это попытка самоубийства.\n\nМесто: {1}.\nУ вас есть около {2} ч. Потом за этой дверью станет совсем тихо.</DespaRIM_LetterText>
+
+  <DespaRIM_LetterText_Prisoner>{PAWN_nameDef} {PAWN_gender ? перестал : перестала} подходить к решётке. Не просит еды, не смотрит на надзирателей, не считает дни. Стены камеры {PAWN_gender ? его : её} больше не держат: они стали последним, что {PAWN_gender ? он хочет : она хочет} видеть.\n\nДверь камеры подпёрта изнутри. Это попытка самоубийства.\n\nМесто: {1}.\nУ вас есть около {2} ч.</DespaRIM_LetterText_Prisoner>
+
+  <DespaRIM_LetterHowToSave>Как спасти: выберите колониста и щёлкните правой кнопкой по запертой двери, чтобы выбить её, а потом подведите любого колониста вплотную. Помогут и оглушение, ранение до беспомощности или арест. Если ничего не сделать, {PAWN_nameDef} погибнет.</DespaRIM_LetterHowToSave>
+
+  <DespaRIM_BreakReason>{PAWN_nameDef} {1} дн. подряд {PAWN_gender ? жил : жила} с настроением ниже {2}. Никто не заметил, как надежда закончилась.</DespaRIM_BreakReason>
+
+  <!-- Places -->
+  <DespaRIM_Place_Bedroom>собственная спальня</DespaRIM_Place_Bedroom>
+  <DespaRIM_Place_CurrentRoom>комната, где застало отчаяние</DespaRIM_Place_CurrentRoom>
+  <DespaRIM_Place_OtherRoom>ближайшая пустая комната</DespaRIM_Place_OtherRoom>
+  <DespaRIM_Place_PrisonCell>тюремная камера</DespaRIM_Place_PrisonCell>
+  <DespaRIM_Place_Here>укрыться негде, прямо там, где стоит</DespaRIM_Place_Here>
+
+  <!-- ================================================================== -->
+  <!--  INSPECTOR AND JOB                                                  -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_InspectGoing>Отчаяние: уходит прочь ({0})</DespaRIM_InspectGoing>
+  <DespaRIM_InspectLocked>Отчаяние: заперт(а) изнутри. Осталось: {0}</DespaRIM_InspectLocked>
+  <DespaRIM_JobReport_Locked>сидит в тишине за запертой дверью (осталось {0}).</DespaRIM_JobReport_Locked>
+
+  <DespaRIM_FloatMenu_BreakDoor>Выбить дверь (внутри: {0})</DespaRIM_FloatMenu_BreakDoor>
+
+  <!-- ================================================================== -->
+  <!--  MESSAGES                                                           -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_MessageLockedIn>{PAWN_nameDef} {PAWN_gender ? заперся : заперлась} изнутри. Время пошло.</DespaRIM_MessageLockedIn>
+  <DespaRIM_MessageNoDoor>{PAWN_nameDef} {PAWN_gender ? опустился : опустилась} на землю и больше не двигается. Двери нет, но и сил подняться тоже нет. Время пошло.</DespaRIM_MessageNoDoor>
+  <DespaRIM_MessageDoorBroken>Дверь выбита! {PAWN_nameDef} всё ещё внутри. Скорее, встаньте рядом.</DespaRIM_MessageDoorBroken>
+
+  <DespaRIM_MessageRescued>{PAWN_nameDef} {PAWN_gender ? вернулся : вернулась} из темноты. Впереди тяжёлые дни, но {PAWN_gender ? он жив : она жива}.</DespaRIM_MessageRescued>
+  <DespaRIM_MessageDied>{PAWN_nameDef} {PAWN_gender ? покончил : покончила} с собой. За дверью больше ничего не слышно. Колония запомнит, что не успела.</DespaRIM_MessageDied>
+
+  <DespaRIM_RescueBy_Talk>{RESCUER_nameDef} {RESCUER_gender ? сел : села} рядом и просто не {RESCUER_gender ? уходил : уходила}. {PAWN_nameDef} долго {PAWN_gender ? молчал, а потом заплакал : молчала, а потом заплакала}.</DespaRIM_RescueBy_Talk>
+  <DespaRIM_RescueBy_Stun>Резкий удар, и {PAWN_nameDef} {PAWN_gender ? очнулся : очнулась} от оцепенения.</DespaRIM_RescueBy_Stun>
+  <DespaRIM_RescueBy_Arrest>{PAWN_nameDef} под стражей. Теперь {PAWN_gender ? он не останется один : она не останется одна} ни на минуту.</DespaRIM_RescueBy_Arrest>
+  <DespaRIM_RescueBy_Downed>{PAWN_nameDef} без сил, но под присмотром.</DespaRIM_RescueBy_Downed>
+
+  <!-- ================================================================== -->
+  <!--  DEV MODE                                                           -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_Dev_Trigger>Dev: запустить «Отчаяние»</DespaRIM_Dev_Trigger>
+  <DespaRIM_Dev_Trigger_Desc>Мгновенно запускает срыв «Отчаяние» у этой пешки без ожидания дней, порога настроения, MTB и иммунитета.</DespaRIM_Dev_Trigger_Desc>
+  <DespaRIM_Dev_AlmostOver>Dev: 10 сек. до конца</DespaRIM_Dev_AlmostOver>
+  <DespaRIM_Dev_AlmostOver_Desc>Оставляет на таймере спасения 10 секунд, чтобы проверить исход «смерть».</DespaRIM_Dev_AlmostOver_Desc>
+  <DespaRIM_Dev_Status>Dev: статус отчаяния</DespaRIM_Dev_Status>
+  <DespaRIM_Dev_Status_Desc>Показывает настроение, накопленные дни, иммунитет и состояние срыва. Подробности пишутся в лог.</DespaRIM_Dev_Status_Desc>
+
+  <DespaRIM_Debug_Reason>(Dev Mode) Срыв вызван вручную.</DespaRIM_Debug_Reason>
+  <DespaRIM_Debug_AlreadyInDespair>{PAWN_nameDef} уже в отчаянии.</DespaRIM_Debug_AlreadyInDespair>
+  <DespaRIM_Debug_NotCandidate>{PAWN_nameDef} не может впасть в отчаяние (не взрослый колонист или заключённый, без настроения, либо заключённые отключены в настройках).</DespaRIM_Debug_NotCandidate>
+  <DespaRIM_Debug_Failed>{PAWN_nameDef}: не удалось запустить срыв (спит без возможности разбудить, в караване или уже в другом состоянии).</DespaRIM_Debug_Failed>
+  <DespaRIM_Debug_CounterFilled>{PAWN_nameDef}: счётчик низкого настроения заполнен. Со следующей проверки идут MTB-броски (если настроение ниже порога).</DespaRIM_Debug_CounterFilled>
+  <DespaRIM_Debug_AlmostOver>{PAWN_nameDef}: до конца осталось 10 секунд.</DespaRIM_Debug_AlmostOver>
+  <DespaRIM_Debug_ImmunityCleared>{PAWN_nameDef}: «Тотальное отчаяние» снято, иммунитета больше нет.</DespaRIM_Debug_ImmunityCleared>
+  <DespaRIM_Debug_RescuedByDev>(Dev Mode)</DespaRIM_Debug_RescuedByDev>
+  <DespaRIM_Debug_Status>{PAWN_labelShort}: настроение {1} (порог {2}), ниже порога {3} из {4} дн., иммунитет: {5}, кандидат: {6}, срыв: {7}</DespaRIM_Debug_Status>
+
+</LanguageData>

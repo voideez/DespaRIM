@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    Hooks the despairing pawn's behavior into the humanlike think tree without XML patches.
+    The vanilla Humanlike tree has the "Humanlike_PostMentalState" insertion point
+    (right after vanilla mental states are handled). The node only fires for pawns
+    in the DespaRIM_Despair state, so it does not conflict with other mods.
+    Works for prisoners too: they use the same Humanlike tree.
+  -->
+  <ThinkTreeDef>
+    <defName>DespaRIM_DespairBehavior</defName>
+    <insertTag>Humanlike_PostMentalState</insertTag>
+    <insertPriority>100</insertPriority>
+    <thinkRoot Class="ThinkNode_ConditionalMentalState">
+      <state>DespaRIM_Despair</state>
+      <subNodes>
+        <li Class="DespaRIM.JobGiver_DespairAct" />
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+
+</Defs>

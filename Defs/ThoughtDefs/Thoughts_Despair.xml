@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    THE DESPAIRING PAWN'S THOUGHT CHAIN
+    1) Total despair: -50, 3 days. Given when the break starts.
+       While this memory is active, the Despair break cannot happen again (prevents death loops).
+    2) Shock and guilt: -15, 7 days. Given to a rescued pawn.
+    3) Second chance: +15, 10 days. Given to a rescued pawn as the reward for the rescue.
+  -->
+
+  <ThoughtDef>
+    <defName>DespaRIM_TotalDespair</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>3</durationDays>
+    <stackLimit>1</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>total despair</label>
+        <description>Everything has gone grey and flat. Food without taste, light without warmth, voices as if from under water. There is nothing left inside, not even fear. Only a quiet certainty that it will always be like this, and the thought that it would be easier not to exist at all.</description>
+        <baseMoodEffect>-50</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DespaRIM_ShockAndGuilt</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>7</durationDays>
+    <stackLimit>1</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>shock and guilt</label>
+        <description>I nearly took my own life. The click of the lock. The silence. Blows on the door that seemed to come from another world. It's hard to look them in the eye: they were fighting to reach me, and inside there was only the waiting for the end.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>DespaRIM_SecondChance</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>10</durationDays>
+    <stackLimit>1</stackLimit>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>second chance</label>
+        <description>They pulled me out. Someone decided I was worth a broken door and bloodied knuckles. It feels strange to feel the sun again. Maybe not everything is lost.</description>
+        <baseMoodEffect>15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!--
+    COLONY PENALTY
+    -20 for 6 days to every free colonist when someone dies of despair.
+    Traits, ideology, genes and hediffs are respected:
+      • no effect on psychopaths and bloodlust pawns (like vanilla "colonist died");
+      • no effect on inhumanized pawns (Anomaly);
+      • any other nullification through ideology, genes or mods is checked by ThoughtUtility.CanGetThought.
+    Multiple deaths stack (up to 5) with diminishing effect.
+  -->
+  <ThoughtDef>
+    <defName>DespaRIM_ColonistLostToDespair</defName>
+    <thoughtClass>Thought_Memory</thoughtClass>
+    <durationDays>6</durationDays>
+    <stackLimit>5</stackLimit>
+    <stackedEffectMultiplier>0.75</stackedEffectMultiplier>
+    <validWhileDespawned>true</validWhileDespawned>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <nullifyingHediffs>
+      <li MayRequire="Ludeon.RimWorld.Anomaly">Inhumanized</li>
+    </nullifyingHediffs>
+    <stages>
+      <li>
+        <label>we were too late</label>
+        <description>One of us took their own life. They shared our table, then closed a door behind them, and no one knocked in time. Now everyone asks themselves: could I have noticed sooner?</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

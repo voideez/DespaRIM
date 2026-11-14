@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!--
+    The "Despair" break.
+    baseCommonality = 0 and MentalBreakWorker_Despair.CommonalityFor() = 0: the vanilla MentalBreaker
+    will NEVER pick this break on its own. Only GameComponent_DespairTracker fires it
+    (mood below the threshold for N+ days → MTB chance).
+  -->
+  <MentalBreakDef>
+    <defName>DespaRIM_DespairBreak</defName>
+    <label>despair</label>
+    <mentalState>DespaRIM_Despair</mentalState>
+    <workerClass>DespaRIM.MentalBreakWorker_Despair</workerClass>
+    <baseCommonality>0</baseCommonality>
+    <intensity>Extreme</intensity>
+  </MentalBreakDef>
+
+  <!--
+    The mental state. Its duration is effectively infinite: it only ends with a rescue or with death
+    (timer inside MentalState_Despair, "Rescue time" setting).
+  -->
+  <MentalStateDef ParentName="BaseMentalState">
+    <defName>DespaRIM_Despair</defName>
+    <label>despair</label>
+    <stateClass>DespaRIM.MentalState_Despair</stateClass>
+    <workerClass>DespaRIM.MentalStateWorker_Despair</workerClass>
+    <category>Misc</category>
+
+    <!-- Who can get it (final say: DespairUtility.IsCandidate and the mod settings) -->
+    <colonistsOnly>false</colonistsOnly>
+    <prisonersCanDo>true</prisonersCanDo>
+    <slavesCanDo>true</slavesCanDo>
+    <inCaravanCanDo>false</inCaravanCanDo>
+    <downedCanDo>false</downedCanDo>
+
+    <!-- No spontaneous recovery -->
+    <minTicksBeforeRecovery>999999999</minTicksBeforeRecovery>
+    <maxTicksBeforeRecovery>999999999</maxTicksBeforeRecovery>
+    <recoveryMtbDays>99999</recoveryMtbDays>
+    <recoverFromSleep>false</recoverFromSleep>
+    <recoverFromCollapsingExhausted>false</recoverFromCollapsingExhausted>
+
+    <!-- Being downed or arrested counts as a rescue: the state is lifted and the rescue thoughts are given -->
+    <recoverFromDowned>true</recoverFromDowned>
+    <recoverFromCaptured>true</recoverFromCaptured>
+
+    <stopsJobs>true</stopsJobs>
+    <blockRandomInteraction>true</blockRandomInteraction>
+    <allowBeatfire>true</allowBeatfire>
+    <escapingPrisonersIgnore>true</escapingPrisonersIgnore>
+    <nameColor>(0.52, 0.56, 0.78)</nameColor>
+
+    <!-- The vanilla letter is disabled (GetBeginLetterText = null): the mod sends its own from Keyed strings -->
+    <beginLetterLabel>despair</beginLetterLabel>
+    <beginLetterDef>ThreatBig</beginLetterDef>
+    <baseInspectLine>Mental state: Despair</baseInspectLine>
+  </MentalStateDef>
+
+</Defs>

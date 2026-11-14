@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- ================================================================== -->
+  <!--  MOD SETTINGS                                                       -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_SettingsCategory>DespaRIM</DespaRIM_SettingsCategory>
+  <DespaRIM_Settings_Title>DespaRIM: despair</DespaRIM_Settings_Title>
+  <DespaRIM_Settings_Subtitle>Silence behind a closed door can be a scream too.</DespaRIM_Settings_Subtitle>
+
+  <DespaRIM_Settings_MoodThreshold>Mood threshold for accumulating stress: {0}</DespaRIM_Settings_MoodThreshold>
+  <DespaRIM_Settings_MoodThreshold_Tip>While a colonist's mood stays BELOW this value, despair builds up inside. As soon as mood rises above it, the counter resets to zero.\n\nRange: 5–40%. Default: 20%.</DespaRIM_Settings_MoodThreshold_Tip>
+
+  <DespaRIM_Settings_DaysRequired>Days before the break can happen: {0}</DespaRIM_Settings_DaysRequired>
+  <DespaRIM_Settings_DaysRequired_Tip>How many consecutive in-game days mood must stay below the threshold before the Despair break becomes possible at all. Until then the chance is zero.\n\nRange: 1–30 days. Default: 10.</DespaRIM_Settings_DaysRequired_Tip>
+
+  <DespaRIM_Settings_Mtb>Base chance (MTB, in days): {0}</DespaRIM_Settings_Mtb>
+  <DespaRIM_Settings_Mtb_Tip>Mean Time Between: on average, the break fires once every this many days for a colonist who has already passed the threshold. Higher numbers make it rarer.\n\nRange: 10–150 days. Default: 60.</DespaRIM_Settings_Mtb_Tip>
+  <DespaRIM_Settings_Mtb_Daily>    ≈ {0} chance of a break for each day after the threshold is passed</DespaRIM_Settings_Mtb_Daily>
+
+  <DespaRIM_Settings_RescueHours>Rescue time: {0} h ({1} ticks)</DespaRIM_Settings_RescueHours>
+  <DespaRIM_Settings_RescueHours_Tip>How many in-game hours pass between a colonist locking themselves in and their suicide. Break down the door, stun them, down them or arrest them before time runs out.\n\nRange: 0.5–6 h. Default: 2 h (5000 ticks).</DespaRIM_Settings_RescueHours_Tip>
+
+  <DespaRIM_Settings_AllowPrisoners>Allow the break for prisoners</DespaRIM_Settings_AllowPrisoners>
+  <DespaRIM_Settings_AllowPrisoners_Tip>If enabled, a prisoner driven to despair can break just like a colonist. They don't look for another room and lock themselves in right in their cell.\n\nDefault: enabled.</DespaRIM_Settings_AllowPrisoners_Tip>
+
+  <DespaRIM_Settings_Summary>Summary: if mood stays below {0} for {1} days in a row, the risk of a break begins (MTB {2} days). Rescue time is {3} h.</DespaRIM_Settings_Summary>
+  <DespaRIM_Settings_Reset>Reset to defaults</DespaRIM_Settings_Reset>
+
+  <!-- ================================================================== -->
+  <!--  LETTER AND BREAK REASON                                            -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_LetterLabel>Despair: {0}</DespaRIM_LetterLabel>
+
+  <DespaRIM_LetterText>{PAWN_nameDef} had stopped crying and never complained to anyone about anything. One day {PAWN_nameDef} simply got up from the table, food unfinished, and left without a word.\n\nThe click of the bolt was barely audible.\n\nThis is not a tantrum and not a cry for attention. It is a suicide attempt.\n\nPlace: {1}.\nYou have about {2} h. After that, it will go completely quiet behind that door.</DespaRIM_LetterText>
+
+  <DespaRIM_LetterText_Prisoner>{PAWN_nameDef} no longer comes to the bars, doesn't ask for food, doesn't look at the wardens, doesn't count the days. The walls of the cell no longer hold {PAWN_objective}: they have become the last thing {PAWN_pronoun} wants to see.\n\nThe cell door has been wedged shut from the inside. This is a suicide attempt.\n\nPlace: {1}.\nYou have about {2} h.</DespaRIM_LetterText_Prisoner>
+
+  <DespaRIM_LetterHowToSave>How to save {PAWN_objective}: select a colonist and right-click the locked door to break it down, then bring any colonist right next to {PAWN_objective}. Stunning, downing or arresting {PAWN_objective} also works. If nothing is done, {PAWN_nameDef} will die.</DespaRIM_LetterHowToSave>
+
+  <DespaRIM_BreakReason>{PAWN_nameDef} lived with mood below {2} for {1} days in a row. No one noticed when the hope ran out.</DespaRIM_BreakReason>
+
+  <!-- Places -->
+  <DespaRIM_Place_Bedroom>their own bedroom</DespaRIM_Place_Bedroom>
+  <DespaRIM_Place_CurrentRoom>the room where despair caught them</DespaRIM_Place_CurrentRoom>
+  <DespaRIM_Place_OtherRoom>the nearest empty room</DespaRIM_Place_OtherRoom>
+  <DespaRIM_Place_PrisonCell>a prison cell</DespaRIM_Place_PrisonCell>
+  <DespaRIM_Place_Here>nowhere to hide, right where they stand</DespaRIM_Place_Here>
+
+  <!-- ================================================================== -->
+  <!--  INSPECTOR AND JOB                                                  -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_InspectGoing>Despair: walking away ({0})</DespaRIM_InspectGoing>
+  <DespaRIM_InspectLocked>Despair: locked in. Time left: {0}</DespaRIM_InspectLocked>
+  <DespaRIM_JobReport_Locked>sitting in silence behind a locked door ({0} left).</DespaRIM_JobReport_Locked>
+
+  <DespaRIM_FloatMenu_BreakDoor>Break down the door (inside: {0})</DespaRIM_FloatMenu_BreakDoor>
+
+  <!-- ================================================================== -->
+  <!--  MESSAGES                                                           -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_MessageLockedIn>{PAWN_nameDef} has bolted the door from the inside. The clock is ticking.</DespaRIM_MessageLockedIn>
+  <DespaRIM_MessageNoDoor>{PAWN_nameDef} has sunk to the ground and stopped moving. There is no door, but no strength to stand up either. The clock is ticking.</DespaRIM_MessageNoDoor>
+  <DespaRIM_MessageDoorBroken>The door is broken! {PAWN_nameDef} is still inside. Hurry, get someone next to {PAWN_objective}.</DespaRIM_MessageDoorBroken>
+
+  <DespaRIM_MessageRescued>{PAWN_nameDef} has come back from the dark. Hard days lie ahead, but {PAWN_pronoun} is alive.</DespaRIM_MessageRescued>
+  <DespaRIM_MessageDied>{PAWN_nameDef} has taken {PAWN_possessive} own life. Nothing can be heard behind the door anymore. The colony will remember that it was too late.</DespaRIM_MessageDied>
+
+  <DespaRIM_RescueBy_Talk>{RESCUER_nameDef} sat down beside {PAWN_nameDef} and simply didn't leave. For a long time there was silence, and then {PAWN_pronoun} began to cry.</DespaRIM_RescueBy_Talk>
+  <DespaRIM_RescueBy_Stun>A sharp blow jolted {PAWN_nameDef} out of the stupor.</DespaRIM_RescueBy_Stun>
+  <DespaRIM_RescueBy_Arrest>{PAWN_nameDef} is under guard. Now {PAWN_pronoun} won't be left alone for a minute.</DespaRIM_RescueBy_Arrest>
+  <DespaRIM_RescueBy_Downed>{PAWN_nameDef} is drained, but no longer alone.</DespaRIM_RescueBy_Downed>
+
+  <!-- ================================================================== -->
+  <!--  DEV MODE                                                           -->
+  <!-- ================================================================== -->
+
+  <DespaRIM_Dev_Trigger>Dev: trigger Despair</DespaRIM_Dev_Trigger>
+  <DespaRIM_Dev_Trigger_Desc>Instantly starts the Despair break on this pawn, skipping the waiting days, mood threshold, MTB and immunity.</DespaRIM_Dev_Trigger_Desc>
+  <DespaRIM_Dev_AlmostOver>Dev: 10 sec left</DespaRIM_Dev_AlmostOver>
+  <DespaRIM_Dev_AlmostOver_Desc>Leaves 10 seconds on the rescue timer, to test the "death" outcome.</DespaRIM_Dev_AlmostOver_Desc>
+  <DespaRIM_Dev_Status>Dev: despair status</DespaRIM_Dev_Status>
+  <DespaRIM_Dev_Status_Desc>Shows mood, accumulated days, immunity and break state. Details are written to the log.</DespaRIM_Dev_Status_Desc>
+
+  <DespaRIM_Debug_Reason>(Dev Mode) Break triggered manually.</DespaRIM_Debug_Reason>
+  <DespaRIM_Debug_AlreadyInDespair>{PAWN_nameDef} is already in despair.</DespaRIM_Debug_AlreadyInDespair>
+  <DespaRIM_Debug_NotCandidate>{PAWN_nameDef} cannot fall into despair (not an adult colonist or prisoner, has no mood, or prisoners are disabled in the settings).</DespaRIM_Debug_NotCandidate>
+  <DespaRIM_Debug_Failed>{PAWN_nameDef}: could not start the break (asleep and cannot be woken, in a caravan, or already in another state).</DespaRIM_Debug_Failed>
+  <DespaRIM_Debug_CounterFilled>{PAWN_nameDef}: low-mood counter filled. MTB rolls start from the next check (if mood is below the threshold).</DespaRIM_Debug_CounterFilled>
+  <DespaRIM_Debug_AlmostOver>{PAWN_nameDef}: 10 seconds left.</DespaRIM_Debug_AlmostOver>
+  <DespaRIM_Debug_ImmunityCleared>{PAWN_nameDef}: "Total despair" removed, no more immunity.</DespaRIM_Debug_ImmunityCleared>
+  <DespaRIM_Debug_RescuedByDev>(Dev Mode)</DespaRIM_Debug_RescuedByDev>
+  <DespaRIM_Debug_Status>{PAWN_labelShort}: mood {1} (threshold {2}), below threshold {3} of {4} days, immunity: {5}, candidate: {6}, break: {7}</DespaRIM_Debug_Status>
+
+</LanguageData>

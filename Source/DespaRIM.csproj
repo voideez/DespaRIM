@@ -1,0 +1,100 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    DespaRIM build project for RimWorld 1.6.
+
+    RimWorld 1.6 runs on Unity Mono and targets .NET Framework 4.7.2.
+    The built DLL goes to ../1.6/Assemblies; RimWorld loads the 1.6 folder for this game version.
+
+    The game path is detected automatically (default Steam location on Windows and Linux).
+    If the game is installed elsewhere, pass the path explicitly:
+      dotnet build -c Release -p:RimWorldDir="D:\Games\RimWorld"
+    or edit the RimWorldDir property below.
+  -->
+
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>DespaRIM</AssemblyName>
+    <RootNamespace>DespaRIM</RootNamespace>
+    <OutputType>Library</OutputType>
+    <Version>1.0.0</Version>
+
+    <!-- Put the DLL straight into the mod folder, without net472 subfolders -->
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <!-- The game needs neither PDB nor deps.json -->
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <!-- ===== Locate the installed game ===== -->
+  <PropertyGroup Condition="'$(RimWorldDir)' == '' And '$(OS)' == 'Windows_NT'">
+    <RimWorldDir>C:\Program Files (x86)\Steam\steamapps\common\RimWorld</RimWorldDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(RimWorldDir)' == '' And '$(OS)' != 'Windows_NT'">
+    <RimWorldDir>$(HOME)/.local/share/Steam/steamapps/common/RimWorld</RimWorldDir>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- The Managed folder differs on Windows / Linux / macOS -->
+    <RimWorldManaged Condition="Exists('$(RimWorldDir)\RimWorldWin64_Data\Managed')">$(RimWorldDir)\RimWorldWin64_Data\Managed</RimWorldManaged>
+    <RimWorldManaged Condition="'$(RimWorldManaged)' == '' And Exists('$(RimWorldDir)/RimWorldLinux_Data/Managed')">$(RimWorldDir)/RimWorldLinux_Data/Managed</RimWorldManaged>
+    <RimWorldManaged Condition="'$(RimWorldManaged)' == '' And Exists('$(RimWorldDir)/RimWorldMac.app/Contents/Resources/Data/Managed')">$(RimWorldDir)/RimWorldMac.app/Contents/Resources/Data/Managed</RimWorldManaged>
+
+    <!-- Harmony from the Steam Workshop (brrainz.harmony mod, id 2009463077) -->
+    <WorkshopDir>$(RimWorldDir)\..\..\workshop\content\294100</WorkshopDir>
+    <HarmonyDll>$(WorkshopDir)\2009463077\1.6\Assemblies\0Harmony.dll</HarmonyDll>
+  </PropertyGroup>
+
+  <!-- .NET Framework 4.7.2 reference assemblies (needed on Linux/macOS and without a Targeting Pack) -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- Option 1: game found, reference its DLLs. Private=false: game DLLs are NOT copied into the mod -->
+  <ItemGroup Condition="'$(RimWorldManaged)' != ''">
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(RimWorldManaged)\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>$(RimWorldManaged)\UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(RimWorldManaged)\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Option 2: game not found (CI, another PC): use public reference assemblies from NuGet -->
+  <ItemGroup Condition="'$(RimWorldManaged)' == ''">
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- Harmony: local Workshop DLL, otherwise NuGet. NOT copied into the mod: the Harmony mod provides it -->
+  <ItemGroup Condition="Exists('$(HarmonyDll)')">
+    <Reference Include="0Harmony">
+      <HintPath>$(HarmonyDll)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="!Exists('$(HarmonyDll)')">
+    <PackageReference Include="Lib.Harmony" Version="2.3.6" ExcludeAssets="runtime" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

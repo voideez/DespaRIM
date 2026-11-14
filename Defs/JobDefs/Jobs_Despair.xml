@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- The despairing pawn walks to their place, locks themselves in and waits -->
+  <JobDef>
+    <defName>DespaRIM_DespairAct</defName>
+    <driverClass>DespaRIM.JobDriver_DespairAct</driverClass>
+    <reportString>walking somewhere no one will see.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+    <playerInterruptible>false</playerInterruptible>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <alwaysShowWeapon>false</alwaysShowWeapon>
+    <neverShowWeapon>true</neverShowWeapon>
+    <collideWithPawns>false</collideWithPawns>
+  </JobDef>
+
+  <!-- A colonist breaks down a door locked by a despairing pawn -->
+  <JobDef>
+    <defName>DespaRIM_BreakDespairDoor</defName>
+    <driverClass>DespaRIM.JobDriver_BreakDespairDoor</driverClass>
+    <reportString>breaking down TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <allowOpportunisticPrefix>false</allowOpportunisticPrefix>
+    <alwaysShowWeapon>true</alwaysShowWeapon>
+  </JobDef>
+
+</Defs>

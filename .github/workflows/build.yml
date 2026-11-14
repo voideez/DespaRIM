@@ -1,0 +1,47 @@
+name: Build and Release
+
+on:
+  push:
+    branches: ["project"]
+    tags:
+      - 'v*'
+  pull_request:
+    branches: ["project"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build Mod
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Build DespaRIM
+        run: dotnet build Source/DespaRIM.csproj -c Release --verbosity normal
+
+      - name: Check DespaRIM.dll exists
+        run: test -f 1.6/Assemblies/DespaRIM.dll
+
+      - name: Prepare asset
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          mkdir -p dist/DespaRIM
+          cp -r About 1.6 Defs Languages LICENSE.txt dist/DespaRIM/
+          cd dist && zip -r "../DespaRIM-${GITHUB_REF_NAME}.zip" DespaRIM
+
+      - name: Upload to Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: DespaRIM-*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

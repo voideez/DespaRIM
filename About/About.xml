@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>DespaRIM</name>
+  <author>voide</author>
+  <packageId>voide.desparim</packageId>
+  <url>https://github.com/voideez/DespaRIM</url>
+
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- Harmony is required: door locking and the dev inspector buttons depend on it. -->
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+    </li>
+  </modDependencies>
+
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>Ludeon.RimWorld</li>
+    <li>Ludeon.RimWorld.Royalty</li>
+    <li>Ludeon.RimWorld.Ideology</li>
+    <li>Ludeon.RimWorld.Biotech</li>
+    <li>Ludeon.RimWorld.Anomaly</li>
+    <li>Ludeon.RimWorld.Odyssey</li>
+  </loadAfter>
+
+  <description>Content warning: this mod depicts suicide. If you are struggling with thoughts of suicide, you are not alone. Help is available: https://findahelpline.com
+
+Sometimes a person doesn't scream, smash things or run off into the wasteland. Sometimes they just close the door behind them.
+
+DespaRIM adds a new extreme mental break: Despair, a suicide attempt. A colonist who lives with mood below a threshold for many days in a row may one day break. No scripts, just chance (MTB). They walk to their room, lock the door from the inside, and you have only a few hours.
+
+How it works
+• Stress only builds while a colonist's mood stays below the threshold (20% by default) without interruption. If mood rises above it, the counter resets.
+• Until the required number of days has passed (10 by default), the break is impossible. After that, there is a small random chance every day (MTB, 60 days by default).
+• The despairing pawn locks themselves in their bedroom, any suitable room, or, for a prisoner, right in their cell. A timer bar appears above their head (2 in-game hours by default).
+• To save them: break down the door (right-click the locked door), bring a colonist right next to them, stun them, down them or arrest them.
+• If you are too late, the colonist takes their own life, and the whole colony carries the loss (traits and ideology are respected).
+• A rescued pawn goes through "Total despair", "Shock and guilt" and "Second chance". While "Total despair" lasts, a repeat break is impossible: no death loops.
+
+Settings: every threshold, duration and chance can be changed in Options → Mod settings → DespaRIM.
+Dev Mode: buttons in the pawn inspector and a "DespaRIM" section in debug actions.
+Languages: English, Russian.
+
+Safe to add to an existing save. Removing it from a save during an active break is not recommended.
+
+────────────────────
+
+Предупреждение: мод затрагивает тему самоубийства. Если вас посещают мысли о самоубийстве, вы не одни. Помощь есть: https://findahelpline.com
+
+Иногда человек не кричит, не крушит и не бежит в пустошь. Иногда он просто закрывает за собой дверь.
+
+DespaRIM добавляет новый экстремальный срыв: «Отчаяние», попытку самоубийства. Колонист, который много дней подряд живёт с настроением ниже порога, может однажды сломаться. Никакого сценария, только случайность (MTB). Он уходит в свою комнату, запирает дверь изнутри, и у вас остаются считанные часы.
+
+Как это работает
+• Стресс копится, только пока настроение колониста держится ниже порога (по умолчанию 20%) непрерывно. Если настроение поднимется выше порога, счётчик сбрасывается.
+• Пока не прошло нужное число дней (по умолчанию 10), срыв невозможен. Потом каждый день есть небольшой случайный шанс (MTB, по умолчанию 60 дней).
+• Отчаявшийся запирается в своей спальне, в любой подходящей комнате или прямо в тюремной камере, если это заключённый. Над его головой появляется шкала оставшегося времени (по умолчанию 2 игровых часа).
+• Чтобы спасти его, выбейте дверь (команда на запертой двери), подведите колониста вплотную, оглушите, свалите с ног или арестуйте.
+• Если не успеть, колонист покончит с собой, а вся колония получает тяжёлую память об утрате (с учётом черт характера и идеологии).
+• Спасённый проходит через «Тотальное отчаяние», «Шок и вину» и «Второй шанс». Пока «Тотальное отчаяние» не прошло, повторный срыв невозможен: смертельных циклов не будет.
+
+Настройки: все пороги, сроки и шансы меняются в «Настройки → Настройки модов → DespaRIM».
+Dev Mode: кнопки в инспекторе пешки и раздел «DespaRIM» в отладочных действиях.
+Языки: английский, русский.
+
+Безопасно добавлять в текущее сохранение. Удалять из сохранения во время активного срыва не рекомендуется.</description>
+</ModMetaData>

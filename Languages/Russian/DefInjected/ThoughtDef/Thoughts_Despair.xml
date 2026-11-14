@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <DespaRIM_TotalDespair.stages.0.label>тотальное отчаяние</DespaRIM_TotalDespair.stages.0.label>
+  <DespaRIM_TotalDespair.stages.0.description>Всё стало серым и плоским. Еда без вкуса, свет без тепла, голоса будто из-под воды. Внутри не осталось ничего, даже страха. Только тихая уверенность, что так будет всегда, и мысль, что проще было бы не быть вовсе.</DespaRIM_TotalDespair.stages.0.description>
+
+  <DespaRIM_ShockAndGuilt.stages.0.label>шок и вина</DespaRIM_ShockAndGuilt.stages.0.label>
+  <DespaRIM_ShockAndGuilt.stages.0.description>Ещё немного, и меня бы не стало, моими же руками. Щелчок замка. Тишина. Удары в дверь, которые будто доносились из другого мира. Стыдно смотреть им в глаза: они рвались ко мне, а внутри было только ожидание конца.</DespaRIM_ShockAndGuilt.stages.0.description>
+
+  <DespaRIM_SecondChance.stages.0.label>второй шанс</DespaRIM_SecondChance.stages.0.label>
+  <DespaRIM_SecondChance.stages.0.description>Меня вытащили. Кто-то решил, что я стою выбитой двери и сбитых костяшек. Странно чувствовать солнце снова. Может, ещё не всё потеряно.</DespaRIM_SecondChance.stages.0.description>
+
+  <DespaRIM_ColonistLostToDespair.stages.0.label>мы не успели</DespaRIM_ColonistLostToDespair.stages.0.label>
+  <DespaRIM_ColonistLostToDespair.stages.0.description>Один из нас покончил с собой. Ел с нами за одним столом, а потом закрыл за собой дверь, и никто не постучал вовремя. Теперь каждый спрашивает себя: можно ли было заметить раньше?</DespaRIM_ColonistLostToDespair.stages.0.description>
+</LanguageData>
