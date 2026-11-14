@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/last-commit/voideez/DespaRIM?style=for-the-badge&logo=git" alt="Last Commit">
   <img src="https://img.shields.io/badge/Language-C%23%20net472-white?style=for-the-badge&logo=dotnet" alt="Language C#">
   <img src="https://img.shields.io/badge/RimWorld-1.6-8b0000?style=for-the-badge&logo=steam" alt="RimWorld 1.6">
-  <img src="https://img.shields.io/badge/Version-Beta%201.0-blue?style=for-the-badge&logo=github" alt="Version">
+  <img src="https://img.shields.io/badge/Version-Beta%201.0.0-blue?style=for-the-badge&logo=github" alt="Version">
   <img src="https://img.shields.io/badge/Requires-Harmony-orange?style=for-the-badge&logo=codeforces" alt="Harmony">
   <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge&logo=opensourcehardware" alt="License">
 </p>
